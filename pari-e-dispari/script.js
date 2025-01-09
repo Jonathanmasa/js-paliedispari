@@ -6,61 +6,53 @@
 // Dichiariamo chi ha vinto.
 // inserimento pari o dispari utente
 
-// genero un numero casuale
-function generoNumero() {
-    return Math.floor(Math.random() * 5) + 1;
-}
-
-// controllo che il numero sia pari
-function numeroPari(numero) {
-    return numero % 2 === 0;
-}
-
-// funzione principale
-function principale(scelta, numeroUtente) {
-    // numero casuale computer
-    let numeroComputer = generaNumero();
-    console.log(`il computer ha scelto il numero ${numeroComputer}.`);
-
-    // sommo i numeri
-    let somma = numeroUtente + numeroComputer;
-    console.log(`la somma dei numeri è ${somma}.`);
-
-    // somma pari o dispari
-    let risultato = èPari(somma) ? "pari" : "dispari";
-
-    // dichiaro il vincitore
-    if (risultato === scelta) {
-        console.log("hai vinto");
-     
-    }else {
-        console.log("ha vinto il computer");
-        
-    }
- 
-    
-}
-
-// L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
+// L’utente sceglie pari o dispari.
 let scelta = prompt("scegli pari o dispari:");
-
-if (scelta !== "pari" && scelta !== "dispari") {
-    console.log("scelta  non valida. scegli pari o dispari.");
-
-    
-} else {
-
 // L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
 let numeroUtente = parseInt(prompt("inserisci numero da 1 a 5:"));
 
-if (numeroUtente < 1 || numeroUtente > 5 || isNaN(numeroUtente)) {
-    console.log("numero non valido. inserisci un numero tra 1 e 5.");
-    
-}else {
-    principale(scelta, numeroUtente);
-}
+console.log("l'utente ha scelto:", scelta);
+console.log("numero scelto:", numeroUtente);
+
+
+// genero un numero casuale
+function generoNumero(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+const numeroComputer = generoNumero(1, 5);
+
+console.log("il numero estratto dal computer è:", numeroComputer);
+
+
+// somma dei due numeri
+const sommaNumeri = numeroUtente + numeroComputer;
+
+console.log("la somma dei numeri è:", sommaNumeri);
+
+// somma pari o dispari
+function verificaPariDispari(sommaGiocata) {
+    if (sommaGiocata % 2 === 0) {
+
+        return "pari";
+    }else {
+        return "dispari";
+    }
+}
+
+const risultatoPariDispari = verificaPariDispari(sommaNumeri);
+
+console.log("la somma dei numeri è:", risultatoPariDispari);
+
+// dichiaro vincitore
+
+if ((risultatoPariDispari === "pari" && scelta === "pari") || (risultatoPariDispari === "dispari")) {
+    console.log("hai vinto!");
+    
+}else {
+    console.log("hai perso");
+    
+}
 
 
     
