@@ -18,10 +18,11 @@ function èPalindroma(parola) {
     return parolaPulita === parolaInvertita;
 }
 
-//  funzione input utente risultato
+//  funzione input utente risultato palindroma
 if (èPalindroma(parola)) {
     console.log("la parola è palindroma.");
     
+//  funzione input utente risultato non palindroma  
 } else {
     console.log("la parola non è palindroma.");
     
