@@ -5,20 +5,6 @@
 // Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 // Dichiariamo chi ha vinto.
 // inserimento pari o dispari utente
-let scelta = prompt("scegli pari o dispari:");
-if (scelta !== "pari" && scelta !== "dispari") {
-    console.log("scelta  non valida. scegli pari o dispari.");
-
-    
-}else {
-    let numeroUtente = parseInt(prompt("inserisci numero da 1 a 5:"));
-    if (numeroUtente < 1 || numeroUtente > 5 || isNaN(numeroUtente)) {
-        console.log("numero non valido. inserisci un numero tra 1 e 5.");
-        
-    }else {
-        principale(scelta, numeroUtente);
-    }
-}
 
 // genero un numero casuale
 function generoNumero() {
@@ -51,7 +37,35 @@ function principale(scelta, numeroUtente) {
         console.log("ha vinto il computer");
         
     }
-
-    
+ 
     
 }
+
+// L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
+let scelta = prompt("scegli pari o dispari:");
+
+if (scelta !== "pari" && scelta !== "dispari") {
+    console.log("scelta  non valida. scegli pari o dispari.");
+
+    
+} else {
+
+// L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
+let numeroUtente = parseInt(prompt("inserisci numero da 1 a 5:"));
+
+if (numeroUtente < 1 || numeroUtente > 5 || isNaN(numeroUtente)) {
+    console.log("numero non valido. inserisci un numero tra 1 e 5.");
+    
+}else {
+    principale(scelta, numeroUtente);
+}
+}
+
+
+
+    
+  
+
+
+
+
